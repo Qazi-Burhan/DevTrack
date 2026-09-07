@@ -1,0 +1,122 @@
+.back-link {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-bottom: var(--sp-4);
+  transition: color var(--dur-fast);
+}
+.back-link:hover { color: var(--accent-400); }
+
+.pd-hero { margin-bottom: var(--sp-5); }
+.pd-hero__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+.pd-hero__name { font-size: 22px; margin-bottom: 6px; }
+.pd-hero__desc { color: var(--text-secondary); font-size: 14px; max-width: 640px; line-height: 1.6; }
+.pd-hero__badges { display: flex; gap: var(--sp-2); }
+
+.pd-hero__progress { margin: var(--sp-6) 0 var(--sp-5); }
+.pd-hero__progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: var(--sp-2);
+  color: var(--text-secondary);
+}
+
+.pd-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: var(--sp-5);
+}
+
+.pd-hero__meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--border-subtle);
+}
+.pd-hero__meta-grid > div { display: flex; flex-direction: column; gap: 3px; }
+.pd-hero__meta-label { font-size: 11.5px; color: var(--text-disabled); text-transform: uppercase; letter-spacing: 0.04em; }
+.pd-hero__meta-value { font-size: 14px; font-weight: 600; }
+
+.pd-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: var(--sp-5);
+  align-items: start;
+}
+
+.pd-side { display: flex; flex-direction: column; gap: var(--sp-5); }
+
+.pd-task-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+.pd-task-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3);
+  border-radius: var(--r-md);
+  transition: background var(--dur-fast);
+}
+.pd-task-row:hover { background: var(--bg-hover); }
+.pd-task-row__status {
+  width: 8px; height: 8px; min-width: 8px; border-radius: 50%;
+}
+.pd-task-row__status--todo { background: var(--text-disabled); }
+.pd-task-row__status--in-progress { background: var(--info-500); }
+.pd-task-row__status--completed { background: var(--success-500); }
+.pd-task-row__main { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.pd-task-row__title { font-size: 13.5px; font-weight: 600; }
+.pd-task-row__desc { font-size: 12px; color: var(--text-tertiary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pd-task-row__badge-group { display: flex; align-items: center; gap: var(--sp-3); }
+.pd-task-row__due { font-size: 11.5px; color: var(--text-disabled); white-space: nowrap; }
+
+.pd-timeline { list-style: none; display: flex; flex-direction: column; gap: var(--sp-4); position: relative; }
+.pd-timeline__item {
+  display: flex;
+  gap: var(--sp-3);
+  align-items: flex-start;
+  position: relative;
+}
+.pd-timeline__item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 16px;
+  bottom: -16px;
+  width: 1px;
+  background: var(--border-default);
+}
+.pd-timeline__dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--bg-surface-3);
+  border: 2px solid var(--text-disabled);
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+.pd-timeline__item--done .pd-timeline__dot { background: var(--accent-500); border-color: var(--accent-400); }
+.pd-timeline__item p { font-size: 13px; font-weight: 600; }
+.pd-timeline__item span { font-size: 12px; color: var(--text-tertiary); }
+
+.pd-activity-list { list-style: none; display: flex; flex-direction: column; gap: var(--sp-3); }
+.pd-activity-list li { display: flex; gap: var(--sp-3); align-items: flex-start; }
+.pd-activity-list__dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent-400); margin-top: 6px; flex-shrink: 0;
+}
+.pd-activity-list p { font-size: 13px; font-weight: 500; }
+.pd-activity-list span { font-size: 11.5px; color: var(--text-disabled); }
+
+@media (max-width: 1000px) {
+  .pd-grid { grid-template-columns: 1fr; }
+  .pd-hero__meta-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .pd-hero__meta-grid { grid-template-columns: 1fr; }
+}

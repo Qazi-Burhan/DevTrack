@@ -1,0 +1,103 @@
+/* Shared "panel" card used across Dashboard, Projects, Tasks, etc. */
+.panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-xl);
+  backdrop-filter: blur(var(--glass-blur));
+  padding: var(--sp-6);
+  animation: fadeInUp var(--dur-slow) var(--ease-out) backwards;
+}
+
+.panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-5);
+  gap: var(--sp-3);
+}
+
+.panel__header h3 {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.panel__link {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent-400);
+  transition: color var(--dur-fast);
+}
+.panel__link:hover { color: var(--accent-300); }
+
+.page-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-6);
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--r-md);
+  padding: 9px var(--sp-3);
+  transition: border-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+.input-field:focus-within {
+  border-color: var(--accent-500);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+.input-field input, .input-field select {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 13.5px;
+  min-width: 0;
+}
+.input-field__icon { color: var(--text-tertiary); font-size: 14px; }
+
+.select-field {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--r-md);
+  padding: 9px var(--sp-3);
+  color: var(--text-primary);
+  font-size: 13.5px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color var(--dur-fast);
+}
+.select-field:focus { border-color: var(--accent-500); }
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-16) var(--sp-6);
+  text-align: center;
+  color: var(--text-tertiary);
+  gap: var(--sp-2);
+}
+.empty-state__icon { font-size: 32px; opacity: 0.6; margin-bottom: var(--sp-2); }
+.empty-state__title { color: var(--text-secondary); font-weight: 600; font-size: 14px; }
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--accent-500);
+  color: white;
+  padding: 10px 16px;
+  border-radius: var(--r-md);
+  z-index: 100;
+}
+.skip-link:focus {
+  left: var(--sp-4);
+  top: var(--sp-4);
+}
